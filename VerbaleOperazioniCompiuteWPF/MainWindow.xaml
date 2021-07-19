@@ -1,0 +1,110 @@
+﻿<Window x:Class="VerbaleOperazioniCompiuteWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VerbaleOperazioniCompiuteWPF"
+        mc:Ignorable="d"
+        Title="Verbale Operazioni Compiute" Height="918" Width="1421"
+        WindowStartupLocation="Manual" 
+    Left="30" Top="30">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="481*"/>
+            <ColumnDefinition Width="306*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="N° Procedimento / Anno" HorizontalAlignment="Left" Margin="10,161,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Tipo Procedimento" HorizontalAlignment="Left" Margin="9,130,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Tribunale di" HorizontalAlignment="Left" Margin="10,280,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.263,0.654" FontWeight="Bold"/>
+        <Label Content="Modello Procedimento" HorizontalAlignment="Left" Margin="10,192,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <ComboBox x:Name="combo_tipo_procedimento" HorizontalAlignment="Left" Margin="171,134,0,0" VerticalAlignment="Top" Width="165" IsEditable="True" TabIndex="1"/>
+        <ComboBox x:Name="combo_modello_procedimento" HorizontalAlignment="Left" Margin="171,196,0,0" VerticalAlignment="Top" Width="165" IsEditable="True" TabIndex="4"/>
+        <ComboBox x:Name="combo_luogo_operazione" HorizontalAlignment="Left" Margin="106,457,0,0" VerticalAlignment="Top" Width="165" IsEditable="True" TabIndex="9"/>
+        <ComboBox x:Name="combo_luogo_tribunale" HorizontalAlignment="Left" Margin="111,284,0,0" VerticalAlignment="Top" Width="166" IsEditable="True" TabIndex="6"/>
+        <TextBox x:Name="txt_num_procedimento" HorizontalAlignment="Left" Height="23" Margin="171,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" TabIndex="2"/>
+        <Label Content="Attività Svolta Presso" HorizontalAlignment="Left" Margin="8,492,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Luogo Attività" HorizontalAlignment="Left" Margin="10,453,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Inizio Operazione:" HorizontalAlignment="Left" Margin="498,101,0,0" VerticalAlignment="Top" FontWeight="Bold" Grid.ColumnSpan="2"/>
+        <Label x:Name="lbl_data_inizio_op" Content="11/11/1111" HorizontalAlignment="Left" Margin="624,103,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl_ora_inizio_op" Content="11:11" HorizontalAlignment="Left" Margin="700,103,0,0" VerticalAlignment="Top"/>
+        <Label Content="P.M." HorizontalAlignment="Left" Margin="10,230,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox x:Name="txt_pm" HorizontalAlignment="Left" Height="23" Margin="111,233,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" TabIndex="5"/>
+        <Label Content="Consulente" HorizontalAlignment="Left" Margin="7,690,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Ausiliario" HorizontalAlignment="Left" Margin="13,721,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox x:Name="txt_ausiliario" HorizontalAlignment="Left" Height="23" Margin="81,724,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155" TabIndex="14"/>
+        <Button x:Name="btn_add_ausiliario" Content="Aggiungi" HorizontalAlignment="Left" Margin="241,724,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.347,1.65" Height="23" Click="btn_add_ausiliario_Click"/>
+        <ListBox x:Name="listBox_ausiliario" HorizontalAlignment="Left" Height="82" Margin="81,761,0,0" VerticalAlignment="Top" Width="235"/>
+        <Label Content="Indagato" HorizontalAlignment="Left" Margin="444,667,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox x:Name="txt_indagato" HorizontalAlignment="Left" Height="23" Margin="541,670,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="195" TabIndex="18"/>
+        <Button x:Name="btn_add_indagato" Content="Aggiungi" HorizontalAlignment="Left" Margin="741,668,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.347,1.65" Height="23" Click="btn_add_indagato_Click"/>
+        <ListBox x:Name="listBox_indagato" HorizontalAlignment="Left" Height="82" Margin="448,707,0,0" VerticalAlignment="Top" Width="372"/>
+        <DatePicker x:Name="data_delega" HorizontalAlignment="Left" Margin="138,412,0,0" VerticalAlignment="Top" Width="165" SelectedDateFormat="Short" TabIndex="8"/>
+        <Label x:Name="lbl_datadecreto" Content="Data Decreto" HorizontalAlignment="Left" Margin="10,411,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.263,0.654" FontWeight="Bold"/>
+        <Button x:Name="btn_rem_ausiliario" Content="Rimuovi Selezionato" HorizontalAlignment="Left" Margin="200,848,0,0" VerticalAlignment="Top" Width="116" Click="btn_rem_ausiliario_Click" Height="24"/>
+        <Button x:Name="btn_rem_indagato" Content="Rimuovi Selezionato" HorizontalAlignment="Left" Margin="700,794,0,0" VerticalAlignment="Top" Width="116" Click="btn_rem_indagato_Click"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="1040" Margin="421,0,0,0" VerticalAlignment="Top" Width="2" Opacity="0.2"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="2" Margin="0,881,0,0" VerticalAlignment="Top" Width="416" Opacity="0.2"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="2" Margin="0,677,0,0" VerticalAlignment="Top" Width="416" Opacity="0.2"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="2" Margin="0,97,0,0" VerticalAlignment="Top" Width="381" Opacity="0.2"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="2" Margin="381,97,0,0" VerticalAlignment="Top" Width="997" Opacity="0.2" Grid.ColumnSpan="2"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="662" Margin="604,0,-300,0" VerticalAlignment="Top" Width="2" Opacity="0.2" Grid.Column="1"/>
+        <Image HorizontalAlignment="Left" Height="71" Margin="5,16,0,0" VerticalAlignment="Top" Width="370" Source="logo.png"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="2" Margin="385,0,0,0" VerticalAlignment="Top" Width="993" Opacity="0.2" Grid.ColumnSpan="2"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="2" VerticalAlignment="Top" Width="385" Opacity="0.2"/>
+        <Button x:Name="btn_inserisci" Content="Inserisci in documento" HorizontalAlignment="Left" Margin="328,827,0,0" VerticalAlignment="Top" Width="144" Height="50" Click="btn_inserisci_Click" Grid.Column="1"/>
+        <RadioButton x:Name="radioM" Content="Dr." HorizontalAlignment="Left" Margin="46,233,0,0" VerticalAlignment="Top" IsChecked="True"/>
+        <RadioButton x:Name="radioF" Content="Dr.ssa" HorizontalAlignment="Left" Margin="46,248,0,0" VerticalAlignment="Top"/>
+        <Label Content="Tipo" HorizontalAlignment="Left" Margin="27,124,0,0" VerticalAlignment="Top" FontWeight="Bold" Grid.Column="1"/>
+        <Label x:Name="lbl_marca" Content="Marca" HorizontalAlignment="Left" Margin="27,155,0,0" VerticalAlignment="Top" FontWeight="Bold" Grid.Column="1"/>
+        <Label x:Name="lbl_modello" Content="Modello" HorizontalAlignment="Left" Margin="27,186,0,0" VerticalAlignment="Top" FontWeight="Bold" Grid.Column="1"/>
+        <Label Content="IMEI/Seriale" HorizontalAlignment="Left" Margin="27,217,0,0" VerticalAlignment="Top" FontWeight="Bold" Grid.Column="1"/>
+        <TextBox x:Name="txt_modello_reperto" HorizontalAlignment="Left" Height="23" Margin="221,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="246" Grid.Column="1" TabIndex="21"/>
+        <TextBox x:Name="txt_IMEI_reperto" HorizontalAlignment="Left" Height="23" Margin="221,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="246" Grid.Column="1" TabIndex="22"/>
+        <Button x:Name="btn_aggiungi_reperto" Content="Aggiungi Reperto" HorizontalAlignment="Left" Margin="192,365,0,0" VerticalAlignment="Top" Width="120" Height="23" Click="btn_aggiungi_reperto_Click" Grid.Column="1"/>
+        <TextBox x:Name="txt_anno_procedimento" HorizontalAlignment="Left" Height="23" Margin="236,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" TabIndex="3"/>
+        <Label x:Name="lbl_pg" Content="P.G." HorizontalAlignment="Left" Margin="10,321,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox x:Name="txt_pg" HorizontalAlignment="Left" Height="23" Margin="111,321,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" TabIndex="7"/>
+        <Label x:Name="lbl_note" Content="Note" HorizontalAlignment="Left" Margin="10,583,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox x:Name="txt_note" HorizontalAlignment="Left" Height="56" Margin="27,614,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="309" Text="( Nome Azienda + Persona Presente)" TabIndex="11"/>
+        <Label Content="N° Copie" HorizontalAlignment="Left" Margin="35,771,0,0" VerticalAlignment="Top" FontWeight="Bold" Grid.Column="1"/>
+        <TextBox x:Name="txt_copie" HorizontalAlignment="Left" Height="23" Margin="95,774,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" Grid.Column="1" TabIndex="27"/>
+        <Label Content="/" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="221,161,0,0"/>
+        <TextBox x:Name="txt_box_attivita" HorizontalAlignment="Left" Height="60" Margin="27,518,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="309" TabIndex="10"/>
+        <ListBox x:Name="listBox_reperti" HorizontalAlignment="Left" Height="153" Margin="95,402,0,0" VerticalAlignment="Top" Width="372" Grid.Column="1"/>
+        <Button x:Name="btn_sottoreperto" Content="Aggiungi Sottoreperto" HorizontalAlignment="Left" Margin="330,365,0,0" VerticalAlignment="Top" Width="137" Height="23" Click="btn_sottoreperto_Click" Grid.Column="1"/>
+        <ComboBox x:Name="combo_consulente" HorizontalAlignment="Left" Margin="81,697,0,0" VerticalAlignment="Top" Width="155" TabIndex="12"/>
+        <RadioButton x:Name="radioPG" Content="P.G." HorizontalAlignment="Left" Margin="171,377,0,0" VerticalAlignment="Top" GroupName="delega"/>
+        <RadioButton x:Name="radioPM" Content="P.M." HorizontalAlignment="Left" Margin="171,361,0,0" VerticalAlignment="Top" GroupName="delega" IsChecked="True"/>
+        <Label x:Name="lbl_conferitoda" Content="Incarico conferito da" HorizontalAlignment="Left" Margin="10,361,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Codice/Password" HorizontalAlignment="Left" Margin="27,248,0,0" VerticalAlignment="Top" FontWeight="Bold" Grid.Column="1"/>
+        <Label Content="PIN SIM" HorizontalAlignment="Left" Margin="27,279,0,0" VerticalAlignment="Top" FontWeight="Bold" Grid.Column="1"/>
+        <Label Content="Condizioni Reperto" HorizontalAlignment="Left" Margin="25,310,0,0" VerticalAlignment="Top" FontWeight="Bold" Grid.Column="1"/>
+        <TextBox x:Name="txt_password_rep" HorizontalAlignment="Left" Height="23" Margin="221,251,0,0" TextWrapping="Wrap" Text="Non Fornito" VerticalAlignment="Top" Width="246" Grid.Column="1" TabIndex="23"/>
+        <TextBox x:Name="txt_PIN_rep" HorizontalAlignment="Left" Height="23" Margin="221,282,0,0" TextWrapping="Wrap" Text="Non Fornito" VerticalAlignment="Top" Width="246" Grid.Column="1" TabIndex="24"/>
+        <TextBox x:Name="txt_condizioni_rep" HorizontalAlignment="Left" Height="23" Margin="221,313,0,0" TextWrapping="Wrap" Text="Normali condizioni d'uso" VerticalAlignment="Top" Width="246" Grid.Column="1" TabIndex="25"/>
+        <ComboBox x:Name="txt_tipo_reperto" HorizontalAlignment="Left" Margin="221,128,0,0" VerticalAlignment="Top" Width="246" IsEditable="True" Grid.Column="1" TabIndex="19"/>
+        <ComboBox x:Name="txt_marca_reperto" HorizontalAlignment="Left" Margin="221,159,0,0" VerticalAlignment="Top" Width="246" IsEditable="True" Grid.Column="1" TabIndex="20"/>
+        <Button x:Name="btn_export_account" Content="Esporta Account" HorizontalAlignment="Left" Margin="318,573,0,0" VerticalAlignment="Top" Width="148" Height="23" Click="btn_export_account_Click" Grid.Column="1"/>
+        <CheckBox x:Name="check_account" Content="Account" HorizontalAlignment="Left" Margin="27,109,0,0" VerticalAlignment="Top" FontWeight="Bold" Checked="check_account_Checked" Grid.Column="1" Unchecked="check_account_Unchecked"/>
+        <RadioButton x:Name="radio_verbale2" Content="Verbale Attività Peritale" HorizontalAlignment="Left" Margin="200,104,0,0" VerticalAlignment="Top" GroupName="TipoVerbale" FontWeight="Bold" Checked="radio_verbale2_Checked" Unchecked="radio_verbale2_Unchecked"/>
+        <RadioButton x:Name="radio_verbale1" Content="Verbale Operazioni Compiute" HorizontalAlignment="Left" Margin="10,104,0,0" VerticalAlignment="Top" GroupName="TipoVerbale" IsChecked="True" FontWeight="Bold"/>
+        <Label x:Name="lbl_ctp" Content="CTP" HorizontalAlignment="Left" Margin="444,465,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox x:Name="txt_CTP" HorizontalAlignment="Left" Height="20" Margin="541,469,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="195" TabIndex="17"/>
+        <Button x:Name="btn_add_CTP" Content="Aggiungi" HorizontalAlignment="Left" Margin="741,469,0,0" VerticalAlignment="Top" Width="75" Click="btn_add_CTP_Click"/>
+        <ListBox x:Name="listBox_CTP" HorizontalAlignment="Left" Height="82" Margin="444,500,0,0" VerticalAlignment="Top" Width="372"/>
+        <Button x:Name="btn_rem_CTP" Content="Rimuovi Selezionato" HorizontalAlignment="Left" Margin="700,587,0,0" VerticalAlignment="Top" Width="116" Click="btn_rem_CTP_Click"/>
+        <Label x:Name="lbl_nome_avvocato" Content="Nome Avvocato" HorizontalAlignment="Left" Margin="433,161,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label x:Name="lbl_foro" Content="Del foro di" HorizontalAlignment="Left" Margin="433,192,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label x:Name="lbl_indagato" Content="Indagato" HorizontalAlignment="Left" Margin="433,222,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox x:Name="txt_nome_avvocato" HorizontalAlignment="Left" Height="23" Margin="541,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="279" TabIndex="14"/>
+        <TextBox x:Name="txt_foro_avvocato" HorizontalAlignment="Left" Height="23" Margin="541,196,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="279" TabIndex="15"/>
+        <TextBox x:Name="txt_indagato_avvocato" HorizontalAlignment="Left" Height="23" Margin="541,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="279" TabIndex="16"/>
+        <Label Content="Dichiarazioni" Grid.Column="1" HorizontalAlignment="Left" Margin="27,637,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox x:Name="txt_dichiarazioni" Grid.Column="1" HorizontalAlignment="Left" Height="74" Margin="95,663,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="377" Text="Nulla da dichiarare" TabIndex="26"/>
+        <Button x:Name="btn_add_avvocato" Content="Aggiungi" HorizontalAlignment="Left" Margin="745,256,0,0" VerticalAlignment="Top" Width="75" Click="btn_add_avvocato_Click"/>
+        <ListBox x:Name="listBox_avvocato" HorizontalAlignment="Left" Height="82" Margin="448,287,0,0" VerticalAlignment="Top" Width="372"/>
+        <Button x:Name="btn_rem_avvocato" Content="Rimuovi Selezionato" HorizontalAlignment="Left" Margin="704,374,0,0" VerticalAlignment="Top" Width="116" Click="btn_rem_avvocato_Click"/>
+        <Button Content="Button" Grid.Column="1" HorizontalAlignment="Left" Margin="62,827,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+
+    </Grid>
+</Window>
